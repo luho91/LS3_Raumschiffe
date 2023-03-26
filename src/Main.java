@@ -59,6 +59,7 @@ public class Main {
         klingonen.zustandRaumschiff();
         System.out.println(separator);
         klingonen.ladungsverzeichnisAusgeben();
+        System.out.println(separator);
 
         vulkanier.reperaturDurchfuehren(true, true, true, 999);
 
