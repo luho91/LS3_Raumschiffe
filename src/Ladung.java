@@ -13,7 +13,7 @@ public abstract class Ladung {
     public Ladung() {}
 
     /**
-     * Proper constructor
+     * (Fully) parameterized constructor
      *
      * @param bezeichnung The initial name of the cargo.
      * @param menge The initial amount of the cargo.

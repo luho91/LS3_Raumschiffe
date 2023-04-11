@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Ladung"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"Raumschiff"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Gast"},{"p":"<Unnamed>","l":"Ladung"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"Raumschiff"},{"p":"<Unnamed>","l":"Transportgut"},{"p":"<Unnamed>","l":"Verpflegungsart"}];updateSearchResults();
