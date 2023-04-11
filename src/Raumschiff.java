@@ -375,7 +375,7 @@ public class Raumschiff {
     public void ladungsverzeichnisAusgeben() {
         System.out.println("LADUNGSVERZEICHNIS:");
         for (Ladung ladung : this.ladungsverzeichnis) {
-            System.out.println(ladung.getBezeichnung() + ": " + ladung.getMenge());
+            System.out.println(ladung.toString());
         }
     }
 
