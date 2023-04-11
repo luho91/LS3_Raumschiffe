@@ -32,19 +32,19 @@ public class Main {
         Raumschiff vulkanier = new Raumschiff(0, (int) (Math.random() * 101), (int) (Math.random() * 101), (int) (Math.random() * 101), 100, 5, "Ni'Var");
 
         // Add cargo to klingon spaceship
-        klingonen.addLadung(new Ladung("Ferengi Schneckensaft", 200));
-        klingonen.addLadung(new Ladung("Bat'leth Klingonen Schwert", 200));
+        klingonen.addLadung(new Transportgut("Ferengi Schneckensaft", 200));
+        klingonen.addLadung(new Transportgut("Bat'leth Klingonen Schwert", 200));
 
         // Add cargo to romulan spaceship
-        romulaner.addLadung(new Ladung("Borg-Schrott", 5));
-        romulaner.addLadung(new Ladung("Rote Materie", 2));
-        romulaner.addLadung(new Ladung("Plasma-Waffe", 50));
+        romulaner.addLadung(new Transportgut("Borg-Schrott", 5));
+        romulaner.addLadung(new Transportgut("Rote Materie", 2));
+        romulaner.addLadung(new Transportgut("Plasma-Waffe", 50));
 
         // Add cargo to vulcan spaceship
-        vulkanier.addLadung(new Ladung("Forschungssonde", 35));
+        vulkanier.addLadung(new Transportgut("Forschungssonde", 35));
 
         // I added this despite it not being in the *** expert diagram, the other ** and * have it.
-        vulkanier.addLadung(new Ladung("Photonentorpedo", 3));
+        vulkanier.addLadung(new Transportgut("Photonentorpedo", 3));
 
         System.out.println(separator);
         System.out.println("Der Krieg beginnt!");

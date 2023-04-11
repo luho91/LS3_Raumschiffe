@@ -3,7 +3,7 @@
  *
  * @see Raumschiff
  */
-public class Ladung {
+public abstract class Ladung {
     private String bezeichnung;
     private int menge;
 
