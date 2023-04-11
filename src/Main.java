@@ -24,12 +24,29 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        if (args.length > 0) {
+            switch (args[0]) {
+                case "--fun2":
+                    break;
+                case "--fun":
+                    break;
+                default:
+                    defaultScreenPlay();
+                    break;
+            }
+        } else {
+            defaultScreenPlay();
+        }
+
+    }
+
+    private static void defaultScreenPlay() {
         String separator = "\n=========================================\n";
 
         // Initialize spaceships
-        Raumschiff klingonen = new Raumschiff(0, 100, 50, 100, 100, 2, "IKS Hegh'ta");
-        Raumschiff romulaner = new Raumschiff(2, 50, 50, 100, 100, 2, "IRW Khazara");
-        Raumschiff vulkanier = new Raumschiff(0, (int) (Math.random() * 101), (int) (Math.random() * 101), (int) (Math.random() * 101), 100, 5, "Ni'Var");
+        Raumschiff klingonen = new Raumschiff(1, 100, 100, 100, 100, 2, "IKS Hegh'ta");
+        Raumschiff romulaner = new Raumschiff(2, 100, 100, 100, 100, 2, "IRW Khazara");
+        Raumschiff vulkanier = new Raumschiff(0, 80, 80, 50, 100, 5, "Ni'Var");
 
         // Add cargo to klingon spaceship
         klingonen.addLadung(new Transportgut("Ferengi Schneckensaft", 200));
@@ -42,8 +59,6 @@ public class Main {
 
         // Add cargo to vulcan spaceship
         vulkanier.addLadung(new Transportgut("Forschungssonde", 35));
-
-        // I added this despite it not being in the *** expert diagram, the other ** and * have it.
         vulkanier.addLadung(new Transportgut("Photonentorpedo", 3));
 
         System.out.println(separator);
