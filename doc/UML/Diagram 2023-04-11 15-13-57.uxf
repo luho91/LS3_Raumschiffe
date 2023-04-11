@@ -1,0 +1,119 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>130</x><y>85</y><w>300</w><h>290</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+*/Ladung/*
+--
+
+- bezeichnung: String
+- menge: int
+
+--
+
++ Ladung()
++ Ladung(bezeichnung: String, menge: int)
+
++ setBezeichnung(String): void
++ setMenge(int): void
+
++ getBezeichnung(): String
++ getMenge(): int
+
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>455</y><w>430</w><h>300</h></coordinates><panel_attributes>*Gast*
+--
+
+- sprache: String
+- herkunft: String
+- verpflegungsart: Verpflegungsart
+
+--
+
++ Gast(bezeichnung: String, menge: int, sprache: String, herkunft: String)
+
++ setSprache(String): void
++ setHerkunft(String): void
++ setVerpflegungsart(Verpflegungsart): void
+
++ getSprache(): String
++ getHerkunft(): String
++ getVerpflegungsart(): Verpflegungsart
+
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>260</x><y>895</y><w>190</w><h>150</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*Verpflegungsart*
+--
+
+VOLLPENSION
+HALBPENSION
+FRUEHSTUECK
+ALLINCLUSIVE
+OHNE</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>365</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>745</y><w>150</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
+wird zugeordnet zu &gt;
+m1=1
+m2=1</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>920</x><y>85</y><w>550</w><h>320</h></coordinates><panel_attributes>*Transportgut*
+--
+
+- laenge: double
+- breite: double
+- hoehe: double
+
+--
+
++ Transportgut(bezeichnung: String, menge: int)
++ Transportgut(bezeichnung: String, menge: int, laenge: double, breite: double, hoehe: double)
+
++ setLaenge(double): void
++ setBreite(double): void
++ setHoehe(double): void
+
++ getLaenge(): double
++ getBreite(): double
++ getHoehe(): double
+
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>135</y><w>520</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;500;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>710</x><y>585</y><w>620</w><h>720</h></coordinates><panel_attributes>*Raumschiff*
+--
+
+- photonentorpedoAnzahl: int
+- energieversorgungInProzent: int
+- schildeInProzent: int
+- huelleInProzent: int
+- lebenserhaltungssystemeInProzent: int
+- androidenAnzahl: int
+- schiffsname: String
+_- broadcastKommunikator: ArrayList&lt;String&gt; {readOnly}_
+- ladungsverzeichnis: ArrayList&lt;Ladung&gt; {readOnly}
+
+--
+
++ Raumschiff()
++ Raumschiff(photonentorpedoAnzahl: int, energieversorgungInProzent: int, zustandSchildeInProzent: int,
+                         zustandHuelleInProzent: int, zustandLebenserhaltungssystemeInProzent: int,
+                         anzahlDroiden: int, schiffsname: String)
+
++ setPhotonentorpedoAnzahl(int): void
++ setEnergieversorgungInProzent(int): void
++ setSchildeInProzent(int): void
++ setHuelleInProzent(int): void
++ setLebenserhaltungssystemeInProzent(int): void
++ setAndroidenAnzahl(int): void
++ setSchiffsname(String): void
+
++ getPhotonentorpedoAnzahl(): int
++ getEnergieversorgungInProzent(): int
++ getSchildeInProzent(): int
++ getHuelleInProzent(): int
++ getLebenserhaltungssystemeInProzent(): int
++ getAndroidenAnzahl(): int
++ getSchiffsname(): String
+
++ addLadung(Ladung): void
++ photonentorpedoSchiessen(Raumschiff): void
++ phaserkanoneSchiessen(Raumschiff): void
+- treffer(Raumschiff): void
++ nachrichtAnAlle(String): void
++ eintraegeLogbuchZurueckgeben(): ArrayList&lt;String&gt;
++ photonentorpedosLaden(int): void
++ reperaturDurchfuehren(boolean, boolean, boolean, int): void
++ zustandRaumschiff(): void
++ ladungsverzeichnisAusgeben(): void
++ ladungsverzeichnisAufraeumen(): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>245</y><w>440</w><h>360</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+&lt; hat geladen
+m1=0, 1
+m2=*</panel_attributes><additional_attributes>400;340;400;20;10;20</additional_attributes></element></diagram>
