@@ -16,28 +16,12 @@ public class Main {
      * The main program.
      * It creates objects and calls theirs and the classes' methods.
      * The predefined 'screenplay' is being performed (the different ships are shooting each other).
-     * I don't think the values for the ships' energy and the amount of available torpedoes are correct in the source.
-     * This screenplay results in no torpedoes being fired.
      *
      * @see <a href="https://moodle.oszimt.de/mod/page/view.php?id=478987">Screenplay</a> (you need to be logged into OSZIMT's moodle)
-     * @param args The program doesn't expect any command line parameters.
+     * @param args The program doesn't expect any command line parameters (yet).
      */
     public static void main(String[] args) {
-
-        if (args.length > 0) {
-            switch (args[0]) {
-                case "--fun2":
-                    break;
-                case "--fun":
-                    break;
-                default:
-                    defaultScreenPlay();
-                    break;
-            }
-        } else {
-            defaultScreenPlay();
-        }
-
+        defaultScreenPlay();
     }
 
     private static void defaultScreenPlay() {
