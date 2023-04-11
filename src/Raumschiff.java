@@ -27,18 +27,18 @@ public class Raumschiff {
      *
      * @param photonentorpedoAnzahl Amount of initially available photon torpedoes.
      * @param energieversorgungInProzent Initial state of ship's energy supply in %.
-     * @param zustandSchildeinProzent Initial state of ship's shields in %.
+     * @param zustandSchildeInProzent Initial state of ship's shields in %.
      * @param zustandHuelleInProzent Initial state of ship's shell in %.
      * @param zustandLebenserhaltungssystemeInProzent Initial state of ship's life support system in %.
      * @param anzahlDroiden Initial number of droids.
      * @param schiffsname Initial ship's name.
      */
-    public Raumschiff(int photonentorpedoAnzahl, int energieversorgungInProzent, int zustandSchildeinProzent,
+    public Raumschiff(int photonentorpedoAnzahl, int energieversorgungInProzent, int zustandSchildeInProzent,
                       int zustandHuelleInProzent, int zustandLebenserhaltungssystemeInProzent, int anzahlDroiden,
                       String schiffsname) {
         this.photonentorpedoAnzahl = photonentorpedoAnzahl;
         this.energieversorgungInProzent = energieversorgungInProzent;
-        this.schildeInProzent = zustandSchildeinProzent;
+        this.schildeInProzent = zustandSchildeInProzent;
         this.huelleInProzent = zustandHuelleInProzent;
         this.lebenserhaltungssystemeInProzent = zustandLebenserhaltungssystemeInProzent;
         this.androidenAnzahl = anzahlDroiden;
@@ -192,6 +192,7 @@ public class Raumschiff {
     public void photonentorpedoSchiessen(Raumschiff r) {
         if (this.getPhotonentorpedoAnzahl() == 0) {
             nachrichtAnAlle("-=*Click*=-");
+            System.out.println("(" + this.getSchiffsname() + " wollte einen Photonentorpedo abschießen, hatte aber keinen geladen.)");
         }
         else {
             nachrichtAnAlle("Photonentorpedo abgeschossen");
@@ -210,6 +211,7 @@ public class Raumschiff {
     public void phaserkanoneSchiessen(Raumschiff r) {
         if (this.getEnergieversorgungInProzent() < 50) {
             nachrichtAnAlle("-=*Click*=-");
+            System.out.println("(" + this.getSchiffsname() + " wollte mit der Phaserkanone schießen, hatte aber nicht ausreichend Energie.)");
         }
         else {
             nachrichtAnAlle("Phaserkanone abgeschossen");
@@ -356,17 +358,7 @@ public class Raumschiff {
      * Print all attributes related to the ship's general state to console.
      */
     public void zustandRaumschiff() {
-        System.out.println("Name: " + getSchiffsname());
-        System.out.println("------------------------------------");
-        System.out.println("ANGRIFF:");
-        System.out.println("Photonentorpedos: " + getPhotonentorpedoAnzahl());
-        System.out.println("------------------------------------");
-        System.out.println("VERTEIDIGUNG:");
-        System.out.println("Energieversorgung: " + getEnergieversorgungInProzent() + "%");
-        System.out.println("Schilde: " + getSchildeInProzent() + "%");
-        System.out.println("Hülle: " + getHuelleInProzent() + "%");
-        System.out.println("Lebenserhaltungssysteme: " + getLebenserhaltungssystemeInProzent() + "%");
-        System.out.println("Androiden: " + getAndroidenAnzahl());
+        System.out.println(this);
     }
 
     /**
@@ -384,5 +376,20 @@ public class Raumschiff {
      */
     public void ladungsverzeichnisAufraeumen() {
         this.ladungsverzeichnis.removeIf(ladung -> ladung.getMenge() == 0);
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + getSchiffsname() + "\n"
+                + "------------------------------------\n"
+                + "ANGRIFF:\n"
+                + "Photonentorpedos: " + getPhotonentorpedoAnzahl() + "\n"
+                + "------------------------------------\n"
+                + "VERTEIDIGUNG:\n"
+                + "Energieversorgung: " + getEnergieversorgungInProzent() + "%\n"
+                + "Schilde: " + getSchildeInProzent() + "%\n"
+                + "Hülle: " + getHuelleInProzent() + "%\n"
+                + "Lebenserhaltungssysteme: " + getLebenserhaltungssystemeInProzent() + "%\n"
+                + "Androiden: " + getAndroidenAnzahl();
     }
 }
